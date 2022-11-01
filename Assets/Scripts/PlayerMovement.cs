@@ -25,17 +25,21 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Misc")]
     [SerializeField]
-    private Vector2 moveDir;
+    private Vector3 moveDir;
 
+    public float slomotionSpeed = 0.5f;
     private Vector2 dashDirection;
 
     [SerializeField]
     private float velocityMagnitude;
     private Rigidbody2D rigBody;
+    public GameObject pointer;
 
     private void Start()
     {
         rigBody = GetComponent<Rigidbody2D>();
+        pointer.SetActive(false);
+
     }
 
     private void Update()
@@ -51,8 +55,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (canDash)
         {
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonUp("Jump"))
             {
+                pointer.SetActive(false);
                 CancelInvoke();
                 dashDirection = moveDir;
                 rigBody.velocity = Vector2.zero;
@@ -61,6 +66,16 @@ public class PlayerMovement : MonoBehaviour
                 doDash = true;
                 canDash = false;
                 cooldownTimer = 0;
+                Time.timeScale = 1;
+                Time.fixedDeltaTime = 0.02f;
+            }
+            else if(Input.GetButton("Jump"))
+            {
+                Time.timeScale = slomotionSpeed;
+                Time.fixedDeltaTime = slomotionSpeed * 0.02f;
+                pointer.SetActive(true);
+                pointer.transform.rotation = Quaternion.LookRotation(Vector3.forward, moveDir);
+
             }
         }
         else

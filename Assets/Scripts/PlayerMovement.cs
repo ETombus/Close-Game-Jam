@@ -69,12 +69,17 @@ public class PlayerMovement : MonoBehaviour
                 Time.timeScale = 1;
                 Time.fixedDeltaTime = 0.02f;
             }
-            else if(Input.GetButton("Jump"))
+            else if (Input.GetButton("Jump"))
             {
                 Time.timeScale = slomotionSpeed;
                 Time.fixedDeltaTime = slomotionSpeed * 0.02f;
                 pointer.SetActive(true);
-                pointer.transform.rotation = Quaternion.LookRotation(Vector3.forward, moveDir);
+
+                //Ifcase in case the play does not input a direction so it doesn't defult to up
+                if (moveDir.magnitude == 0)
+                    pointer.SetActive(false);
+                else
+                    pointer.transform.rotation = Quaternion.LookRotation(Vector3.forward, moveDir);
 
             }
         }
@@ -140,5 +145,16 @@ public class PlayerMovement : MonoBehaviour
     void EndDash()
     {
         doDash = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Enemy")
+        {
+            cooldownTimer = cooldownDash;
+
+            Destroy(collision.gameObject);
+
+        }
     }
 }

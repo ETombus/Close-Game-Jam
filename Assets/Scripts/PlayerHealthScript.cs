@@ -20,33 +20,29 @@ public class PlayerHealthScript : MonoBehaviour
 
     async void Update()
     {
-        if(Time.frameCount % 10 == 0)
+        fireDistance = Vector2.Distance(this.transform.position, firePos.transform.position);
+        fireWidth = GameObject.FindObjectOfType<FireHealthScript>().fireHealth;
+
+        if(fireDistance > fireWidth && warm)
         {
-            fireDistance = Vector2.Distance(this.transform.position, firePos.transform.position);
-            fireWidth = GameObject.FindObjectOfType<FireHealthScript>().fireHealth;
+            try{ StopCoroutine(instance); } catch{ /**/ }
 
-            if(fireDistance > fireWidth && warm)
-            {
-                try{ StopCoroutine(instance); } catch{ /**/ }
-
-                healthBar.gameObject.SetActive(true);
-                instance = ChangeHealthOverTime(-.5f);
-                StartCoroutine(instance);
-            }
-            else if(fireDistance < fireWidth && fireDistance > fireWidth/2)
-            {
-                try{ StopCoroutine(instance); } catch{ /**/ }
-                warm = true;
-            }
-            else if(fireDistance < fireWidth && warm)
-            {
-                try{ StopCoroutine(instance); } catch{ /**/ }
-
-                instance = ChangeHealthOverTime(.5f);
-                StartCoroutine(instance);
-            }
+            healthBar.gameObject.SetActive(true);
+            instance = ChangeHealthOverTime(-.5f);
+            StartCoroutine(instance);
         }
-        
+        else if(fireDistance < fireWidth && fireDistance > fireWidth/2)
+        {
+            try{ StopCoroutine(instance); } catch{ /**/ }
+            warm = true;
+        }
+        else if(fireDistance < fireWidth && warm)
+        {
+            try{ StopCoroutine(instance); } catch{ /**/ }
+
+            instance = ChangeHealthOverTime(.5f);
+            StartCoroutine(instance);
+        }
     }
 
     IEnumerator ChangeHealthOverTime(float change)

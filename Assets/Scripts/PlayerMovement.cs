@@ -14,9 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float dashDuration = 1;
     public float cooldownDash;
     public float dashStreangth = 10;
-    [SerializeField]
     private bool canDash = true;
-    [SerializeField]
     private bool doDash = false;
 
     private bool addDashForceOnce = true;
@@ -30,16 +28,14 @@ public class PlayerMovement : MonoBehaviour
     public float slomotionSpeed = 0.5f;
     private Vector2 dashDirection;
 
-    [SerializeField]
-    private float velocityMagnitude;
     private Rigidbody2D rigBody;
     public GameObject pointer;
     [SerializeField]
-    public PlayerHealthScript playerHealth;
+    private PlayerHealthScript playerHealth;
 
     private void Start()
     {
-        playerHealth = FindObjectOfType<PlayerHealthScript>();
+        playerHealth = GetComponent<PlayerHealthScript>();
         rigBody = GetComponent<Rigidbody2D>();
         pointer.SetActive(false);
     }
@@ -127,8 +123,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rigBody.velocity = Vector2.ClampMagnitude(rigBody.velocity, maxSpeed);
         }
-
-        velocityMagnitude = rigBody.velocity.magnitude;
     }
 
 
@@ -155,11 +149,11 @@ public class PlayerMovement : MonoBehaviour
         {
             cooldownTimer = cooldownDash;
 
-            playerHealth.ChangeHealth(-10f);
+            playerHealth.ChangeHealth(-5f);
+            collision.GetComponent<EnemyHealth>().Die();
 
-            Destroy(collision.gameObject);
         }
-        else if(collision.CompareTag("Projectile"))
+        else if (collision.CompareTag("Projectile"))
         {
             Debug.Log("hit projectile");
             cooldownTimer = cooldownDash;

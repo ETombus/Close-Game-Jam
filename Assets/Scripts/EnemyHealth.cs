@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    void Die()
+    public void Die()
     {
         Destroy(gameObject);
-
     }
 
 }

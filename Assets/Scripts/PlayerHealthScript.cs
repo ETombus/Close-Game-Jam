@@ -9,7 +9,7 @@ public class PlayerHealthScript : MonoBehaviour
     [SerializeField] Vector2 flamePos;
     IEnumerator instance = null;
     float flameDistance;
-    int flameWidth =3;
+    float flameWidth =3;
     bool warm = true;
 
     void Start()
@@ -23,6 +23,7 @@ public class PlayerHealthScript : MonoBehaviour
         if(Time.frameCount % 10 == 0)
         {
             flameDistance = Vector2.Distance(this.transform.position, flamePos);
+            flameWidth = GameObject.FindObjectOfType<FireHealthScript>().flameHealth;
 
             if(flameDistance > flameWidth && warm)
             {

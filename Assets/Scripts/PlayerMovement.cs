@@ -22,15 +22,16 @@ public class PlayerMovement : MonoBehaviour
 
 
     [Header("Misc")]
-    [SerializeField]
     private Vector3 moveDir;
+    [SerializeField]
+    private Vector3 lastMovedDir;
 
     public float slomotionSpeed = 0.5f;
     private Vector2 dashDirection;
 
     private Rigidbody2D rigBody;
     public GameObject pointer;
-    [SerializeField]
+
     private PlayerHealthScript playerHealth;
 
     private void Start()
@@ -50,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
     {
         moveDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
+        if (moveDir.magnitude != 0)
+            lastMovedDir = moveDir;
 
         if (canDash)
         {
@@ -57,7 +60,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 pointer.SetActive(false);
                 CancelInvoke();
-                dashDirection = moveDir;
                 rigBody.velocity = Vector2.zero;
 
                 addDashForceOnce = true;
@@ -73,11 +75,7 @@ public class PlayerMovement : MonoBehaviour
                 Time.fixedDeltaTime = slomotionSpeed * 0.02f;
                 pointer.SetActive(true);
 
-                //Ifcase in case the play does not input a direction so it doesn't defult to up
-                if (moveDir.magnitude == 0)
-                    pointer.SetActive(false);
-                else
-                    pointer.transform.rotation = Quaternion.LookRotation(Vector3.forward, moveDir);
+                pointer.transform.rotation = Quaternion.LookRotation(Vector3.forward, lastMovedDir);
 
             }
         }
@@ -130,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (addDashForceOnce)
         {
-            rigBody.AddForce(moveDir * dashStreangth, ForceMode2D.Impulse);
+            rigBody.AddForce(lastMovedDir * dashStreangth, ForceMode2D.Impulse);
             addDashForceOnce = false;
         }
 
@@ -145,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy"))
         {
             cooldownTimer = cooldownDash;
 
@@ -163,4 +161,6 @@ public class PlayerMovement : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
+    //}
 }

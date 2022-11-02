@@ -56,9 +56,7 @@ public class PlayerHealthScript : MonoBehaviour
 
     public void ChangeHealth(float change)
     {
-        Debug.Log("health "+healthBar.value);
         healthBar.value += change;
-        Debug.Log("health "+healthBar.value);
 
         if(healthBar.value == 100)
             healthBar.gameObject.SetActive(false);

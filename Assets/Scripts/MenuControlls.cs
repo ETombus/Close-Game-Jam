@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class MenuControlls : MonoBehaviour
@@ -8,11 +9,14 @@ public class MenuControlls : MonoBehaviour
     public GameObject creditsPanel;
     public GameObject helpPanel;
 
+    public GameObject menuFirstButton, helpFirstButton, creditsFirstButton;
+
     // Start is called before the first frame update
     void Start()
     {
         helpPanel.SetActive(false);
         creditsPanel.SetActive(false);
+        SetFirstSelected(menuFirstButton);
     }
 
     public void StartGame()
@@ -22,16 +26,40 @@ public class MenuControlls : MonoBehaviour
 
     public void ToggleHelp()
     {
-        helpPanel.SetActive(!helpPanel.activeSelf);
+        if (helpPanel.activeSelf)
+        {
+            helpPanel.SetActive(false);
+            SetFirstSelected(menuFirstButton);
+        }
+        else
+        {
+            helpPanel.SetActive(true);
+            SetFirstSelected(helpFirstButton);
+        }
         creditsPanel.SetActive(false);
     }
+    
 
     public void ToggleCredits()
     {
-        creditsPanel.SetActive(!creditsPanel.activeSelf);
+        if (creditsPanel.activeSelf)
+        {
+            creditsPanel.SetActive(false);
+            SetFirstSelected(menuFirstButton);
+        }
+        else
+        {
+            creditsPanel.SetActive(true);
+            SetFirstSelected(creditsFirstButton);
+        }
         helpPanel.SetActive(false);
     }
 
+    void SetFirstSelected(GameObject selectedButton)
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(selectedButton);
+    }
     public void QuitGame()
     {
 #if UNITY_EDITOR

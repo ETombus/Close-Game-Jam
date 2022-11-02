@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class PlayerHealthScript : MonoBehaviour
 {
     [SerializeField] Slider healthBar;
-    [SerializeField] Vector2 flamePos;
+    public GameObject firePos;
     IEnumerator instance = null;
-    float flameDistance;
-    float flameWidth =3;
+    float fireDistance;
+    float fireWidth =3;
     bool warm = true;
 
     void Start()
@@ -22,10 +22,10 @@ public class PlayerHealthScript : MonoBehaviour
     {
         if(Time.frameCount % 10 == 0)
         {
-            flameDistance = Vector2.Distance(this.transform.position, flamePos);
-            flameWidth = GameObject.FindObjectOfType<FireHealthScript>().flameHealth;
+            fireDistance = Vector2.Distance(this.transform.position, firePos.transform.position);
+            fireWidth = GameObject.FindObjectOfType<FireHealthScript>().fireHealth;
 
-            if(flameDistance > flameWidth && warm)
+            if(fireDistance > fireWidth && warm)
             {
                 try{ StopCoroutine(instance); } catch{ /**/ }
 
@@ -33,12 +33,12 @@ public class PlayerHealthScript : MonoBehaviour
                 instance = ChangeHealthOverTime(-.5f);
                 StartCoroutine(instance);
             }
-            else if(flameDistance < flameWidth && flameDistance > 1.5f)
+            else if(fireDistance < fireWidth && fireDistance > fireWidth/2)
             {
                 try{ StopCoroutine(instance); } catch{ /**/ }
                 warm = true;
             }
-            else if(flameDistance < flameWidth && warm)
+            else if(fireDistance < fireWidth && warm)
             {
                 try{ StopCoroutine(instance); } catch{ /**/ }
 

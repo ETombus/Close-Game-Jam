@@ -43,7 +43,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        processInputs();
+        if (Time.timeScale != 0)
+        {
+            processInputs();
+        }
+
+        if (Input.GetButtonDown("Pause"))
+            GameStateController.Instance.TogglePause();
     }
 
 

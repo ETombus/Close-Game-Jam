@@ -29,6 +29,17 @@ public class FireHealthScript : MonoBehaviour
             Destroy(hit.gameObject);
             fireHealth -= .5f;
             SetHealth();
+
+            if (fireHealth <= 0)
+                GameOver();
         }
     }
+
+    void GameOver()
+    {
+        //Set Score Here
+        GameStateController.Instance.ChangeGameState(GameStateController.GameState.GameOver);        
+    }
+
+
 }

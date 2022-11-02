@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class GameStateController : MonoBehaviour
@@ -9,6 +10,10 @@ public class GameStateController : MonoBehaviour
 
     public GameObject pausePanel;
     public GameObject gameOverPanel;
+
+    [Header("First Selected Buttons")]
+    public GameObject pauseFirstButton, gameOverFirstButton;
+    //Controller support ;)
 
     public enum GameState
     {
@@ -44,10 +49,12 @@ public class GameStateController : MonoBehaviour
         {
             // Pause Game (Only if playing)
             if (currentState != GameState.GameOver)
-            {
-
+            {                
                 currentState = GameState.GamePaused;
                 pausePanel.SetActive(true);
+                EventSystem.current.SetSelectedGameObject(pauseFirstButton);
+
+
                 StopTimescale();
             }
         }
@@ -55,6 +62,7 @@ public class GameStateController : MonoBehaviour
         {
             gameOverPanel.SetActive(true);
             currentState = GameState.GameOver;
+            EventSystem.current.SetSelectedGameObject(gameOverFirstButton);
             StopTimescale();
             // Dead as hell
         }

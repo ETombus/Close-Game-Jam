@@ -27,7 +27,6 @@ public class PlayerHealthScript : MonoBehaviour
         {
             try{ StopCoroutine(instance); } catch{ /**/ }
 
-            healthBar.gameObject.SetActive(true);
             instance = ChangeHealthOverTime(-.5f);
             StartCoroutine(instance);
         }
@@ -51,9 +50,19 @@ public class PlayerHealthScript : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(.05f);
-            healthBar.value +=change;
-            if(healthBar.value == 100)
-                healthBar.gameObject.SetActive(false);
+            ChangeHealth(change);
         }
+    }
+
+    public void ChangeHealth(float change)
+    {
+        Debug.Log("health "+healthBar.value);
+        healthBar.value += change;
+        Debug.Log("health "+healthBar.value);
+
+        if(healthBar.value == 100)
+            healthBar.gameObject.SetActive(false);
+        else
+            healthBar.gameObject.SetActive(true);
     }
 }

@@ -34,12 +34,14 @@ public class PlayerMovement : MonoBehaviour
     private float velocityMagnitude;
     private Rigidbody2D rigBody;
     public GameObject pointer;
+    [SerializeField]
+    public PlayerHealthScript playerHealth;
 
     private void Start()
     {
+        playerHealth = FindObjectOfType<PlayerHealthScript>();
         rigBody = GetComponent<Rigidbody2D>();
         pointer.SetActive(false);
-
     }
 
     private void Update()
@@ -149,12 +151,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Enemy")
+        if(collision.CompareTag("Enemy"))
         {
             cooldownTimer = cooldownDash;
 
-            Destroy(collision.gameObject);
+            playerHealth.ChangeHealth(-10f);
 
+            Destroy(collision.gameObject);
+        }
+        else if(collision.CompareTag("Projectile"))
+        {
+            Debug.Log("hit projectile");
+            cooldownTimer = cooldownDash;
+
+            playerHealth.ChangeHealth(-5f);
+
+            Destroy(collision.gameObject);
         }
     }
 }

@@ -24,7 +24,6 @@ public class FireHealthScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hit)
     {
-        Debug.Log("hit; "+hit.tag);
         if(hit.CompareTag("Projectile"))
         {
             Destroy(hit.gameObject);

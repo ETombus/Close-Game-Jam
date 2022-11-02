@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 21cdb5863c3197f4bbe855ef207fd72c
+guid: 572e99b75dfe9e84789eb4409417bff6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,7 +119,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wood(PickedUp)_0
+      name: Log(Shining)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -133,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e95e4840be33b564d95ddb685c95370d
-      internalID: 1400945089
+      spriteID: 7d482ddd06023564db8237efd5302462
+      internalID: 1078079831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wood(PickedUp)_1
+      name: Log(Shining)_1
       rect:
         serializedVersion: 2
         x: 32
@@ -154,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 243682eff4213bf40a857de24b9cc99b
-      internalID: 266982217
+      spriteID: a23eca73f97ce694c87e11f93cc9066f
+      internalID: 1352513234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wood(PickedUp)_2
+      name: Log(Shining)_2
       rect:
         serializedVersion: 2
         x: 64
@@ -175,14 +175,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46db2ee1cd372c9488db71c64d8384b9
-      internalID: 1912950004
+      spriteID: 590d2280c20dce94195dcb5931f4fafd
+      internalID: -945133701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wood(PickedUp)_3
+      name: Log(Shining)_3
       rect:
         serializedVersion: 2
         x: 96
@@ -196,8 +196,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a2e1f35163f9f14a9d289710faeee23
-      internalID: -1201101918
+      spriteID: a97164085693d8548b26a5cbbaebc735
+      internalID: 510921212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Log(Shining)_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a7be3811a755d4686dfc26b3bc94ae
+      internalID: -1169748668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Log(Shining)_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c3aa5305a255fc47ba6f590cba67c7e
+      internalID: -359454897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Log(Shining)_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5201cc384e2d6440afc47d77592c8e6
+      internalID: -1791050807
       vertices: []
       indices: 
       edges: []
@@ -213,10 +276,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Wood(PickedUp)_1: 266982217
-      Wood(PickedUp)_3: -1201101918
-      Wood(PickedUp)_2: 1912950004
-      Wood(PickedUp)_0: 1400945089
+      Log(Shining)_2: -945133701
+      Log(Shining)_3: 510921212
+      Log(Shining)_4: -1169748668
+      Log(Shining)_1: 1352513234
+      Log(Shining)_6: -1791050807
+      Log(Shining)_5: -359454897
+      Log(Shining)_0: 1078079831
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

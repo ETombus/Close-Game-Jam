@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealthScript : MonoBehaviour
 {
-    [SerializeField] Slider healthBar;
+    private Slider healthBar;
     public GameObject fire;
     IEnumerator instance = null;
     float fireDistance;

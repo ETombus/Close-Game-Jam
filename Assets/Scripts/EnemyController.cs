@@ -13,23 +13,26 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if(!atFire)
+        if (fire != null)
         {
-            fireDistance = Vector2.Distance(transform.position, fire.transform.position);
-            fireWidth = fire.GetComponent<FireHealthScript>().fireHealth;
-        
-            if(fireDistance <= fireWidth)
+            if (!atFire)
             {
-                atFire = true;
-                GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                StartCoroutine(ShootSnowballs());
+                fireDistance = Vector2.Distance(transform.position, fire.transform.position);
+                fireWidth = fire.GetComponent<FireHealthScript>().fireHealth;
+
+                if (fireDistance <= fireWidth)
+                {
+                    atFire = true;
+                    GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                    StartCoroutine(ShootSnowballs());
+                }
             }
         }
     }
 
     IEnumerator ShootSnowballs()
     {
-        while(true)
+        while (true)
         {
             yield return new WaitForSeconds(shootDelay);
             //TODO; shoot animation here

@@ -42,6 +42,7 @@ public class EnemySpawner : MonoBehaviour
                 randomPos.x = Random.Range(firePos.x + spawnDistance, screenMaxX);
 
             var enemyHolder = Instantiate(enemyPrefab, randomPos, Quaternion.identity);
+            enemyHolder.GetComponent<EnemyController>().fire = fire;
 
             yield return new WaitForSeconds(1f/*TODO: Add spawn animation time here*/);
             enemyHolder.GetComponent<Rigidbody2D>().velocity = firePos - randomPos / 5;

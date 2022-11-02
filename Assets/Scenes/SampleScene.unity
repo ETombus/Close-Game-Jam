@@ -619,6 +619,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 803649592981736205, guid: 5f190bc4133119f4f95b19cbcb87b156, type: 3}
+      propertyPath: fire
+      value: 
+      objectReference: {fileID: 1464655886}
+    - target: {fileID: 803649592981736205, guid: 5f190bc4133119f4f95b19cbcb87b156, type: 3}
       propertyPath: firePos
       value: 
       objectReference: {fileID: 1464655886}

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealthScript : MonoBehaviour
 {
     [SerializeField] Slider healthBar;
-    public GameObject firePos;
+    public GameObject fire;
     IEnumerator instance = null;
     float fireDistance;
     float fireWidth =3;
@@ -20,8 +20,8 @@ public class PlayerHealthScript : MonoBehaviour
 
     async void Update()
     {
-        fireDistance = Vector2.Distance(this.transform.position, firePos.transform.position);
-        fireWidth = GameObject.FindObjectOfType<FireHealthScript>().fireHealth;
+        fireDistance = Vector2.Distance(transform.position, fire.transform.position);
+        fireWidth = fire.GetComponent<FireHealthScript>().fireHealth;
 
         if(fireDistance > fireWidth && warm)
         {

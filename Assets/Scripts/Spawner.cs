@@ -34,20 +34,18 @@ public class Spawner : MonoBehaviour
         {
             yield return new WaitForSeconds(timeInterval);
 
-            SpawnEnemy();
+            StartCoroutine(SpawnEnemy());
 
             if(logs.Count !> 5)
                 SpawnLog();
-            Debug.Log("logs = "+logs.Count);
 
             timeInterval *= .95f;
-            Debug.Log(timeInterval);
         }
     }
 
     IEnumerator SpawnEnemy()
     {
-        RandomPos(randomPos);
+        randomPos = RandomPos(randomPos);
 
         var enemyHolder = Instantiate(enemyPrefab, randomPos, Quaternion.identity);
         enemyHolder.GetComponent<EnemyController>().fire = fire;
@@ -59,14 +57,12 @@ public class Spawner : MonoBehaviour
 
     Vector2 RandomPos(Vector2 vector)
     {
-        vector.x = Random.Range(firePos.x + minSpawnDistance, firePos.x + maxSpawnDistance);
-        vector.y = Random.Range(firePos.y + minSpawnDistance, firePos.y + maxSpawnDistance);
+        retryPos:
+        vector.x = Random.Range(firePos.x - maxSpawnDistance, firePos.x + maxSpawnDistance);
+        vector.y = Random.Range(firePos.y - maxSpawnDistance, firePos.y + maxSpawnDistance);
 
-        if(Random.Range(0,2) == 1)
-            vector.x *= -1f;
-
-        if(Random.Range(0,2) == 1)
-            vector.y *= -1f;
+        if(Vector3.Distance(vector,firePos) < minSpawnDistance)
+            goto retryPos;
         
         return vector;
     }

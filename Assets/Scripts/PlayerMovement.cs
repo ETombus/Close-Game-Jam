@@ -33,11 +33,13 @@ public class PlayerMovement : MonoBehaviour
     public GameObject pointer;
 
     private PlayerHealthScript playerHealth;
+    private FireHealthScript fireHealth;
     public bool holdingLog;
 
     private void Start()
     {
         playerHealth = GetComponent<PlayerHealthScript>();
+        fireHealth = FindObjectOfType<FireHealthScript>();
         rigBody = GetComponent<Rigidbody2D>();
         pointer.SetActive(false);
     }
@@ -167,10 +169,10 @@ public class PlayerMovement : MonoBehaviour
 
             Destroy(collision.gameObject);
         }
-        else if(collision.CompareTag("Fire") && holdingLog)
+        else if(collision.CompareTag("Fire") && holdingLog && fireHealth.fireHealth != fireHealth.maxHealth)
         {
             holdingLog = false;
-            FindObjectOfType<FireHealthScript>().SetHealth(1f);
+            fireHealth.SetHealth(1f);
             Destroy(GetComponentInChildren<LogScript>().gameObject);
         }
     }

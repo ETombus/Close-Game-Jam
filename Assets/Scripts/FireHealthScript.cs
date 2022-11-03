@@ -7,7 +7,7 @@ public class FireHealthScript : MonoBehaviour
 {
     [SerializeField] Light2D innerLight, outerLight;
     public float fireHealth = 0f; 
-    float maxHealth = 3f;
+    public float maxHealth = 3f;
     float lightRadiusDifference = 1.65f;
     void Start()
     {

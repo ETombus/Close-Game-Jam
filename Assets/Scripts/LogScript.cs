@@ -7,7 +7,7 @@ public class LogScript : MonoBehaviour
     Animator animator;
     PlayerMovement playerMoveCS;
 
-    void Start()
+    void awake()
     {
         animator = GetComponent<Animator>();
         playerMoveCS = FindObjectOfType<PlayerMovement>();

@@ -151,6 +151,22 @@ PrefabInstance:
       propertyPath: fire
       value: 
       objectReference: {fileID: 1464655886}
+    - target: {fileID: 803649592981736205, guid: 5f190bc4133119f4f95b19cbcb87b156, type: 3}
+      propertyPath: coldDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 803649592981736205, guid: 5f190bc4133119f4f95b19cbcb87b156, type: 3}
+      propertyPath: warmthHeal
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 803649592981736205, guid: 5f190bc4133119f4f95b19cbcb87b156, type: 3}
+      propertyPath: snowmanDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 803649592981736205, guid: 5f190bc4133119f4f95b19cbcb87b156, type: 3}
+      propertyPath: snowballDamage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1026278281630895271, guid: 5f190bc4133119f4f95b19cbcb87b156, type: 3}
       propertyPath: m_RootOrder
       value: 4

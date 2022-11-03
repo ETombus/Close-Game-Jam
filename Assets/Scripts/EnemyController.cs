@@ -8,6 +8,8 @@ public class EnemyController : MonoBehaviour
     public GameObject fire;
     private Animator anim;
     private SpriteRenderer spriRend;
+    private AudioSource audSource;
+    public AudioClip ThrowSound;
     Rigidbody rigBody;
     float fireDistance;
     float fireWidth;
@@ -18,7 +20,7 @@ public class EnemyController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         spriRend = GetComponent<SpriteRenderer>();
-
+        audSource = GetComponent<AudioSource>();
 
         Vector2 diff = fire.transform.position - transform.position;
         diff = diff.normalized;
@@ -57,6 +59,8 @@ public class EnemyController : MonoBehaviour
         {
             anim.SetTrigger("Shoot");
             yield return new WaitForSeconds(shootDelay);
+            audSource.clip = ThrowSound;
+            audSource.Play();
             var snowball = Instantiate(snowballPrefab, transform.position, Quaternion.identity);
             snowball.GetComponent<Rigidbody2D>().velocity = fire.transform.position - snowball.transform.position;
         }

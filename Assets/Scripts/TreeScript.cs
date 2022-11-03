@@ -5,7 +5,9 @@ using UnityEngine;
 public class TreeScript : MonoBehaviour
 {
     [SerializeField] GameObject logPrefab;
-
+    private void Start()
+    {
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))

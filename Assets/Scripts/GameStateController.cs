@@ -8,6 +8,8 @@ public class GameStateController : MonoBehaviour
 {
     public static GameStateController Instance;
 
+    private AudioSource audSource;
+    public AudioClip endingLaugh;
     public GameObject pausePanel;
     public GameObject gameOverPanel;
 
@@ -26,6 +28,8 @@ public class GameStateController : MonoBehaviour
 
     private void Start()
     {
+        audSource = GetComponent<AudioSource>();
+
         if (GameStateController.Instance == null) Instance = this;
         else Destroy(gameObject);
 
@@ -60,7 +64,11 @@ public class GameStateController : MonoBehaviour
         }
         else if (newState == GameState.GameOver)
         {
-            gameOverPanel.SetActive(true);
+            audSource.clip = endingLaugh;
+            audSource.pitch = 1.5f;
+            audSource.Play();
+            gameOverPanel.SetActive(true);  
+
             currentState = GameState.GameOver;
             EventSystem.current.SetSelectedGameObject(gameOverFirstButton);
             StopTimescale();

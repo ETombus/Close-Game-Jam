@@ -17,9 +17,13 @@ public class PlayerHealthScript : MonoBehaviour
     private float fireDistance;
     private float fireWidth =3;
     private bool warm = true;
+    private AudioSource audSource;
+    public AudioClip deathSound;
+
 
     void Start()
     {
+        audSource = GetComponent<AudioSource>();
         healthBar = GameObject.FindObjectOfType<Slider>();
         ChangeHealth(100);
         healthBar.gameObject.SetActive(false);
@@ -72,8 +76,11 @@ public class PlayerHealthScript : MonoBehaviour
 
         if(healthBar.value == 0)
         {
+
             Time.timeScale = 1;
             Time.fixedDeltaTime = 0.02f;
+            audSource.clip = deathSound;
+            audSource.Play();
             FindObjectOfType<Spawner>().CallSpawnPlayer();
             FindObjectOfType<PlayerMovement>().holdingLog = false;
             Destroy(gameObject);

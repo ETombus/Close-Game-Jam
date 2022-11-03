@@ -40,8 +40,12 @@ public class PlayerMovement : MonoBehaviour
     private FireHealthScript fireHealth;
     public bool holdingLog;
 
+    private AudioSource audSource;
+    public AudioClip dashSound;
+
     private void Start()
     {
+        audSource = GetComponent<AudioSource>();
         playerHealth = GetComponent<PlayerHealthScript>();
         fireHealth = FindObjectOfType<FireHealthScript>();
         rigBody = GetComponent<Rigidbody2D>();
@@ -82,6 +86,11 @@ public class PlayerMovement : MonoBehaviour
                 doDash = true;
                 canDash = false;
                 cooldownTimer = 0;
+
+
+                audSource.clip = dashSound;
+                audSource.Play();
+
                 //Looks shit, I KNOW. Not much time left, it is what it is!
                 Instantiate(dashParticles, transform.position, Quaternion.Euler(pointer.transform.eulerAngles.x, pointer.transform.eulerAngles.y, -Quaternion.LookRotation(Vector3.forward, lastMovedDir).eulerAngles.z));
                 Time.timeScale = 1;

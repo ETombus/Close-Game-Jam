@@ -11,9 +11,15 @@ public class FireHealthScript : MonoBehaviour
     float lightRadiusDifference = 1.65f;
     public Animator faceAnim;
 
+    private AudioSource audSource;
+
+    public AudioClip eatingSound;
+    public AudioClip hitSound;
+
     void Start()
     {
         SetHealth(maxHealth);
+        audSource = GetComponent<AudioSource>();
     }
 
     public void SetHealth(float change)
@@ -23,10 +29,10 @@ public class FireHealthScript : MonoBehaviour
         if(fireHealth>maxHealth)
             fireHealth=maxHealth;
 
-        outerLight.pointLightInnerRadius = fireHealth;
+        outerLight.pointLightInnerRadius = fireHealth - 0.5f;
         outerLight.pointLightOuterRadius = fireHealth;
 
-        innerLight.pointLightInnerRadius = fireHealth / lightRadiusDifference;
+        innerLight.pointLightInnerRadius = (fireHealth / lightRadiusDifference) - 0.1f;
         innerLight.pointLightOuterRadius = fireHealth / lightRadiusDifference;
     }
 
@@ -37,6 +43,8 @@ public class FireHealthScript : MonoBehaviour
         {
             Destroy(collision.gameObject);
             SetHealth(-.5f);
+            audSource.clip = hitSound;
+            audSource.Play();
 
             if (fireHealth <= 0)
                 GameOver();
@@ -51,6 +59,8 @@ public class FireHealthScript : MonoBehaviour
 
     public void EatingAnim()
     {
+        audSource.clip = eatingSound;
+        audSource.Play();
         faceAnim.SetTrigger("Eating");
     }
 

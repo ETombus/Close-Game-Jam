@@ -1,0 +1,423 @@
+fileFormatVersion: 2
+guid: bbc5b270788be334a955b3d847bf9a2f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Eviroment_29
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12692a02470fed54cba637236a4e4d75
+      internalID: 1755788099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eviroment_30
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff968f79ca3015c43b5293007c4cffb8
+      internalID: 1861996839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eviroment_31
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656b2afb7628d1c43b6b9a440aa01585
+      internalID: -2085795714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eviroment_34
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 65
+        width: 51
+        height: 64
+      alignment: 9
+      pivot: {x: 0.49424505, y: 0.114786744}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14fb890b4cb61840a5d98b9ef6d249d
+      internalID: 1045703115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eviroment_36
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6dae3c9416451e4fa974eb01d520683
+      internalID: 1873565509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eviroment_37
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444fd997c1f03544b89df844fcbaf2c7
+      internalID: -671497304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eviroment_38
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 999dac733bbac264eafe2425b5bfaf35
+      internalID: 1139880139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eviroment_44
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 372f89862f45f254db8e0c9746540762
+      internalID: 2086532296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eviroment_46
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 96
+      alignment: 9
+      pivot: {x: 0.50458574, y: 0.27376375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f659e1e25a0874a9bc1ffb0cbbc3e5
+      internalID: 1109391665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eviroment_51
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 13
+        width: 44
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5066702, y: 0.17773007}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cbad41efdb74104996087f742a6d5f7
+      internalID: -1449008306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eviroment_63
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 16
+        width: 32
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5091715, y: 0.17855236}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dbefb4081e515f4aa249989bf63f6d0
+      internalID: 1147448782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Eviroment_26: 584983603
+      Eviroment_25: -2020286207
+      Eviroment_42: -53215859
+      Eviroment_43: -264270191
+      Eviroment_9: 866911727
+      Eviroment_54: 2119606737
+      Eviroment_49: -428181497
+      Eviroment_3: -1839406962
+      Eviroment_19: -622054836
+      Eviroment_47: 869365867
+      Eviroment_23: -1286784883
+      Eviroment_5: 2116276300
+      Eviroment_66: 983854525
+      Eviroment_32: 2066227162
+      Eviroment_17: 1130691235
+      Eviroment_59: 801431542
+      Eviroment_67: -1605662928
+      Eviroment_35: 158235092
+      Eviroment_30: 1861996839
+      Eviroment_52: 376067109
+      Eviroment_45: 23600212
+      Eviroment_62: -150758581
+      Eviroment_46: 1109391665
+      Eviroment_31: -2085795714
+      Eviroment_40: 934112606
+      Eviroment_15: 1796169097
+      Eviroment_18: -1157781037
+      Eviroment_48: -284430054
+      Eviroment_63: 1147448782
+      Eviroment_16: -1679854704
+      Eviroment_53: -996012273
+      Eviroment_6: -868062583
+      Eviroment_4: 1447460482
+      Eviroment_7: -2081602917
+      Eviroment_10: -1702333107
+      Eviroment_13: -2055151840
+      Eviroment_24: -27439562
+      Eviroment_50: -781431595
+      Eviroment_21: -730314052
+      Eviroment_28: -1904996201
+      Eviroment_33: 1866203324
+      Eviroment_27: 1793843299
+      Eviroment_14: 1737011819
+      Eviroment_11: 55189083
+      Eviroment_41: -1920476747
+      Eviroment_51: -1449008306
+      Eviroment_38: 1139880139
+      Eviroment_44: 2086532296
+      Eviroment_0: -889168767
+      Eviroment_55: -135601139
+      Eviroment_58: 2003565314
+      Eviroment_22: 1821031957
+      Eviroment_2: 761752353
+      Eviroment_1: 352166533
+      Eviroment_61: 1215768294
+      Eviroment_65: 1740338885
+      Eviroment_64: -850580674
+      Eviroment_37: -671497304
+      Eviroment_56: 156941674
+      Eviroment_36: 1873565509
+      Eviroment_20: 1883298644
+      Eviroment_57: 186195710
+      Eviroment_8: -1864694820
+      Eviroment_29: 1755788099
+      Eviroment_34: 1045703115
+      Eviroment_39: -1877859109
+      Eviroment_60: -1932949065
+      Eviroment_12: 1926135447
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
     
     float timeInterval = 5f;
     float maxSpawnDistance = 5.35f;
-    float minSpawnDistance = 4.35f;
+    float minSpawnDistance = 5f;
 
     private List<GameObject> trees = new List<GameObject>();
 
@@ -33,14 +33,17 @@ public class Spawner : MonoBehaviour
     {
         while(fireHealth.fireHealth >=1)
         {
+            
             yield return new WaitForSeconds(timeInterval);
 
-            if(trees.Count < 5)
+            if(trees.Count < 7)
                 SpawnTree();
                 
             StartCoroutine(SpawnEnemy());
 
             timeInterval *= .95f;
+            if (timeInterval < 0)
+                timeInterval = 0;
         }
     }
 
@@ -51,8 +54,8 @@ public class Spawner : MonoBehaviour
         var enemyHolder = Instantiate(enemyPrefab, randomPos, Quaternion.identity);
         enemyHolder.GetComponent<EnemyController>().fire = fire;
 
-        yield return new WaitForSeconds(1f/*TODO: Add spawn animation time here*/);
-        try{enemyHolder.GetComponent<Rigidbody2D>().velocity = firePos - randomPos / 5;}
+        yield return new WaitForSeconds(1f);
+        try{enemyHolder.GetComponent<Rigidbody2D>().velocity = (firePos - (Vector2)enemyHolder.transform.position)/5;}
         catch{/**/}
     }
 

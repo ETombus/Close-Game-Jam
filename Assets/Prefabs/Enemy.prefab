@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b250f22c67a0b488d8a7eba2171756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticles: {fileID: 3759359252896267139, guid: 3db75ef0e068cd64cac4e3eae1049249, type: 3}
 --- !u!114 &6092334247640947047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5d04c3b960fd94a93f167411b73d6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orderAddition: 0
 --- !u!95 &1834186728
 Animator:
   serializedVersion: 4

@@ -72,6 +72,8 @@ public class PlayerHealthScript : MonoBehaviour
 
         if(healthBar.value == 0)
         {
+            Time.timeScale = 1;
+            Time.fixedDeltaTime = 0.02f;
             FindObjectOfType<Spawner>().CallSpawnPlayer();
             FindObjectOfType<PlayerMovement>().holdingLog = false;
             Destroy(gameObject);

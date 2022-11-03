@@ -9,6 +9,8 @@ public class FireHealthScript : MonoBehaviour
     public float fireHealth = 0f; 
     public float maxHealth = 3f;
     float lightRadiusDifference = 1.65f;
+    public Animator faceAnim;
+
     void Start()
     {
         SetHealth(maxHealth);
@@ -47,5 +49,9 @@ public class FireHealthScript : MonoBehaviour
         GameStateController.Instance.ChangeGameState(GameStateController.GameState.GameOver);        
     }
 
+    public void EatingAnim()
+    {
+        faceAnim.SetTrigger("Eating");
+    }
 
 }

@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     Rigidbody rigBody;
     float fireDistance;
     float fireWidth;
-    float shootDelay = 2f;
+    float shootDelay = 1.5f;
     bool atFire = false;
 
     private void Start()

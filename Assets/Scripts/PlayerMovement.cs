@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public float dashStreangth = 10;
     private bool canDash = true;
     private bool doDash = false;
+    public GameObject dashParticles;
+
 
     private bool addDashForceOnce = true;
     private float cooldownTimer;
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rigBody;
     private Animator anim;
     public GameObject pointer;
+    public GameObject SnowDestructionParticle;
 
     private PlayerHealthScript playerHealth;
     private FireHealthScript fireHealth;
@@ -79,6 +82,8 @@ public class PlayerMovement : MonoBehaviour
                 doDash = true;
                 canDash = false;
                 cooldownTimer = 0;
+                //Looks shit, I KNOW. Not much time left, it is what it is!
+                Instantiate(dashParticles, transform.position, Quaternion.Euler(pointer.transform.eulerAngles.x, pointer.transform.eulerAngles.y, -Quaternion.LookRotation(Vector3.forward, lastMovedDir).eulerAngles.z));
                 Time.timeScale = 1;
                 Time.fixedDeltaTime = 0.02f;
             }
@@ -173,6 +178,7 @@ public class PlayerMovement : MonoBehaviour
             cooldownTimer = cooldownDash;
 
             playerHealth.ChangeHealth(playerHealth.snowballDamage*-1);
+            Instantiate(SnowDestructionParticle,collision.transform.position,collision.transform.rotation);
 
             Destroy(collision.gameObject);
         }
@@ -180,6 +186,7 @@ public class PlayerMovement : MonoBehaviour
         {
             holdingLog = false;
             fireHealth.SetHealth(1f);
+            fireHealth.EatingAnim();
             Destroy(GetComponentInChildren<LogScript>().gameObject);
         }
     }

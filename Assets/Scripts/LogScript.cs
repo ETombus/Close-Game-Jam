@@ -7,14 +7,14 @@ public class LogScript : MonoBehaviour
     Animator animator;
     PlayerMovement playerMoveCS;
 
-    void awake()
+    void Awake()
     {
         animator = GetComponent<Animator>();
-        playerMoveCS = FindObjectOfType<PlayerMovement>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        playerMoveCS = FindObjectOfType<PlayerMovement>();
         if(collision.CompareTag("Player") && !playerMoveCS.holdingLog)
         {
             transform.parent = collision.transform;

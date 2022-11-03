@@ -43,7 +43,8 @@ public class EnemySpawner : MonoBehaviour
             enemyHolder.GetComponent<EnemyController>().fire = fire;
 
             yield return new WaitForSeconds(1f/*TODO: Add spawn animation time here*/);
-            enemyHolder.GetComponent<Rigidbody2D>().velocity = firePos - randomPos / 5;
+            try{enemyHolder.GetComponent<Rigidbody2D>().velocity = firePos - randomPos / 5;}
+            catch{/**/}
 
             timeInterval *= .95f;
             Debug.Log(timeInterval);

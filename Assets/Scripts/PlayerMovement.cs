@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject pointer;
 
     private PlayerHealthScript playerHealth;
+    public bool holdingLog;
 
     private void Start()
     {
@@ -165,6 +166,11 @@ public class PlayerMovement : MonoBehaviour
             playerHealth.ChangeHealth(-5f);
 
             Destroy(collision.gameObject);
+        }
+        else if(collision.CompareTag("Fire") && holdingLog)
+        {
+            FindObjectOfType<FireHealthScript>().SetHealth(1f);
+            Destroy(GetComponentInChildren<LogScript>().gameObject);
         }
     }
 

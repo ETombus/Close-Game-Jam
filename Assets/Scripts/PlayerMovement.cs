@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 dashDirection;
 
     private Rigidbody2D rigBody;
+    private Animator anim;
     public GameObject pointer;
 
     private PlayerHealthScript playerHealth;
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         playerHealth = GetComponent<PlayerHealthScript>();
         fireHealth = FindObjectOfType<FireHealthScript>();
         rigBody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         pointer.SetActive(false);
     }
 
@@ -62,6 +64,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (moveDir.magnitude != 0)
             lastMovedDir = moveDir;
+
+        anim.SetFloat("IsMoving", moveDir.magnitude);
 
         if (canDash)
         {

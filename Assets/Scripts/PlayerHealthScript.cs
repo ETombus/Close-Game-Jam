@@ -67,6 +67,7 @@ public class PlayerHealthScript : MonoBehaviour
         if(healthBar.value == 0)
         {
             FindObjectOfType<Spawner>().CallSpawnPlayer();
+            FindObjectOfType<PlayerMovement>().holdingLog = false;
             Destroy(gameObject);
         }
     }

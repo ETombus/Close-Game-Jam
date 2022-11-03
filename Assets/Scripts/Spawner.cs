@@ -12,8 +12,8 @@ public class Spawner : MonoBehaviour
     Vector2 randomPos, firePos;
     
     float timeInterval = 5f;
-    float maxSpawnDistance = 10f;
-    float minSpawnDistance = 5f;
+    float maxSpawnDistance = 5.35f;
+    float minSpawnDistance = 4.35f;
 
     private List<GameObject> trees = new List<GameObject>();
 

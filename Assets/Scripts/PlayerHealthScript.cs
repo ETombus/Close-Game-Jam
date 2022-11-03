@@ -5,12 +5,17 @@ using UnityEngine.UI;
 
 public class PlayerHealthScript : MonoBehaviour
 {
-    private Slider healthBar;
     public GameObject fire;
-    IEnumerator instance = null;
-    float fireDistance;
-    float fireWidth =3;
-    bool warm = true;
+
+    [Header("Health variables")]
+    [SerializeField] 
+    public float coldDamage, snowmanDamage, snowballDamage, warmthHeal;
+
+    private Slider healthBar;
+    private IEnumerator instance = null;
+    private float fireDistance;
+    private float fireWidth =3;
+    private bool warm = true;
 
     void Start()
     {
@@ -28,7 +33,7 @@ public class PlayerHealthScript : MonoBehaviour
         {
             try{ StopCoroutine(instance); } catch{ /**/ }
 
-            instance = ChangeHealthOverTime(-.5f);
+            instance = ChangeHealthOverTime(coldDamage);
             StartCoroutine(instance);
         }
         else if(fireDistance < fireWidth && fireDistance > fireWidth/2)
@@ -40,7 +45,7 @@ public class PlayerHealthScript : MonoBehaviour
         {
             try{ StopCoroutine(instance); } catch{ /**/ }
 
-            instance = ChangeHealthOverTime(.5f);
+            instance = ChangeHealthOverTime(warmthHeal);
             StartCoroutine(instance);
         }
     }

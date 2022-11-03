@@ -1,6 +1,5 @@
 TODO;
 
 score 
-camera movement
 sounds
 Tweaking and quality of life

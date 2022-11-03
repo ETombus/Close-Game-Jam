@@ -163,16 +163,15 @@ public class PlayerMovement : MonoBehaviour
         {
             cooldownTimer = cooldownDash;
 
-            playerHealth.ChangeHealth(-5f);
+            playerHealth.ChangeHealth(playerHealth.snowmanDamage);
             collision.GetComponent<EnemyHealth>().Die();
-
         }
         else if (collision.CompareTag("Projectile"))
         {
             Debug.Log("hit projectile");
             cooldownTimer = cooldownDash;
 
-            playerHealth.ChangeHealth(-5f);
+            playerHealth.ChangeHealth(playerHealth.snowballDamage);
 
             Destroy(collision.gameObject);
         }

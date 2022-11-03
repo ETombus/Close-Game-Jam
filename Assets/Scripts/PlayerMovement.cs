@@ -169,6 +169,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(collision.CompareTag("Fire") && holdingLog)
         {
+            holdingLog = false;
             FindObjectOfType<FireHealthScript>().SetHealth(1f);
             Destroy(GetComponentInChildren<LogScript>().gameObject);
         }

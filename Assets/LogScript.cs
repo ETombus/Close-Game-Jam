@@ -19,6 +19,7 @@ public class LogScript : MonoBehaviour
         {
             transform.parent = collision.transform;
             transform.localPosition = new Vector2(0f,1f);
+            playerMoveCS.holdingLog = true;
             animator.SetBool("PickedUp", true);
         }
     }

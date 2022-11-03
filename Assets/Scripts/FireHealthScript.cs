@@ -28,11 +28,12 @@ public class FireHealthScript : MonoBehaviour
         innerLight.pointLightOuterRadius = fireHealth / lightRadiusDifference;
     }
 
-    void OnTriggerEnter2D(Collider2D hit)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if(hit.CompareTag("Projectile"))
+        Debug.Log("fire: hit");
+        if(collision.CompareTag("Projectile"))
         {
-            Destroy(hit.gameObject);
+            Destroy(collision.gameObject);
             SetHealth(-.5f);
 
             if (fireHealth <= 0)

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7294469467027491743}
   - component: {fileID: 853393994148102988}
+  - component: {fileID: 5460412414466287464}
   - component: {fileID: 5686830046361763901}
   m_Layer: 0
   m_Name: MotherFace
@@ -85,6 +86,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5460412414466287464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077281020487901041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5d04c3b960fd94a93f167411b73d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderAddition: 1
 --- !u!95 &5686830046361763901
 Animator:
   serializedVersion: 4
@@ -338,6 +352,7 @@ GameObject:
   - component: {fileID: 7679831868084007845}
   - component: {fileID: 7679831868084007866}
   - component: {fileID: 7679831868084007844}
+  - component: {fileID: 4319251312212886371}
   - component: {fileID: 1464655891}
   - component: {fileID: 1464655890}
   - component: {fileID: 8718263857479570559}
@@ -364,7 +379,7 @@ Transform:
   - {fileID: 7679831867588867361}
   - {fileID: 7294469467027491743}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7679831868084007866
 SpriteRenderer:
@@ -434,6 +449,19 @@ MonoBehaviour:
   outerLight: {fileID: 7679831867588867360}
   fireHealth: 3
   maxHealth: 3
+--- !u!114 &4319251312212886371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7679831868084007867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5d04c3b960fd94a93f167411b73d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderAddition: 0
 --- !u!50 &1464655891
 Rigidbody2D:
   serializedVersion: 4

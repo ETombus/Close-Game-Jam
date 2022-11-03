@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6326971552728890118}
   - component: {fileID: 4460951874063256362}
   - component: {fileID: 6092334247640947047}
+  - component: {fileID: 4761398028044242017}
   - component: {fileID: 1834186728}
   m_Layer: 0
   m_Name: Enemy
@@ -35,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6842499399141068437
 SpriteRenderer:
@@ -152,6 +153,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snowballPrefab: {fileID: 6055572976335617284, guid: c0ee04c6be2759a4494b6902dd360160, type: 3}
   fire: {fileID: 0}
+--- !u!114 &4761398028044242017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7185919441851312907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5d04c3b960fd94a93f167411b73d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1834186728
 Animator:
   serializedVersion: 4

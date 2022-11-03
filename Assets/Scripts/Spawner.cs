@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] GameObject fire;
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] GameObject logPrefab;
+    [SerializeField] GameObject playerPrefab;
     FireHealthScript fireHealth;
     Vector2 randomPos, firePos;
     
@@ -34,10 +35,10 @@ public class Spawner : MonoBehaviour
         {
             yield return new WaitForSeconds(timeInterval);
 
-            StartCoroutine(SpawnEnemy());
-
             if(logs.Count < 5)
                 SpawnLog();
+                
+            StartCoroutine(SpawnEnemy());
 
             timeInterval *= .95f;
         }
@@ -73,5 +74,17 @@ public class Spawner : MonoBehaviour
 
         var logHolder = Instantiate(logPrefab, randomPos, Quaternion.identity);
         logs.Add(logHolder);
+    }
+
+    public void CallSpawnPlayer()
+    {
+        StartCoroutine(SpawnPlayer());
+    }
+
+    IEnumerator SpawnPlayer()
+    {
+        yield return new WaitForSeconds(2.5f);
+        var player = Instantiate(playerPrefab, Vector2.zero, Quaternion.identity);
+        player.GetComponent<PlayerHealthScript>().fire = fire;
     }
 }

@@ -1,5 +1,5 @@
-TODO
+TODO;
 
-Gameover screen (death of player/death of fire)
-Add art & sounds
+respawn player
+sounds & art
 Tweaking and quality of life

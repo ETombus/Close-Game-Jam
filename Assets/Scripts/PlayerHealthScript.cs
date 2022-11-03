@@ -15,10 +15,11 @@ public class PlayerHealthScript : MonoBehaviour
     void Start()
     {
         healthBar = GameObject.FindObjectOfType<Slider>();
+        ChangeHealth(100);
         healthBar.gameObject.SetActive(false);
     }
 
-    async void Update()
+    void Update()
     {
         fireDistance = Vector2.Distance(transform.position, fire.transform.position);
         fireWidth = fire.GetComponent<FireHealthScript>().fireHealth;
@@ -62,5 +63,11 @@ public class PlayerHealthScript : MonoBehaviour
             healthBar.gameObject.SetActive(false);
         else
             healthBar.gameObject.SetActive(true);
+
+        if(healthBar.value == 0)
+        {
+            FindObjectOfType<Spawner>().CallSpawnPlayer();
+            Destroy(gameObject);
+        }
     }
 }

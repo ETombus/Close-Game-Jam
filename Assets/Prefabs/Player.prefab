@@ -390,6 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa40d761526dcda46a501904967c72d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 418403139369989459}
   fire: {fileID: 0}
 --- !u!95 &3041343319593633715
 Animator:

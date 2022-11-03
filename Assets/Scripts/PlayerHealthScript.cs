@@ -9,7 +9,8 @@ public class PlayerHealthScript : MonoBehaviour
 
     [Header("Health variables")]
     [SerializeField] 
-    public float coldDamage, snowmanDamage, snowballDamage, warmthHeal;
+    public float coldDamage;
+    public float snowmanDamage, snowballDamage, warmthHeal;
 
     private Slider healthBar;
     private IEnumerator instance = null;

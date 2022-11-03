@@ -16,15 +16,26 @@ public class OrderInLayerFixer : MonoBehaviour
 
     private void Update()
     {
-        
-        if(playerTrans.transform.position.y > transform.position.y)
+        if (playerTrans != null)
         {
-            spritRend.sortingOrder = 10 + orderAddition;
+
+
+
+            if (playerTrans.transform.position.y > transform.position.y)
+            {
+                spritRend.sortingOrder = 10 + orderAddition;
+            }
+            else
+            {
+                spritRend.sortingOrder = 4 + orderAddition;
+            }
         }
         else
-        {
-            spritRend.sortingOrder = 4 + orderAddition;
-        }
+            try
+            {
+                playerTrans = GameObject.FindGameObjectWithTag("Player");
+            }
+            catch { }
     }
 
 

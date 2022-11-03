@@ -159,6 +159,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("hold me" + holdingLog);
         if (collision.CompareTag("Enemy"))
         {
             cooldownTimer = cooldownDash;

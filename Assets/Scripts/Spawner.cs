@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] GameObject fire;
     [SerializeField] GameObject enemyPrefab;
-    [SerializeField] GameObject logPrefab;
+    [SerializeField] GameObject treePrefab;
     [SerializeField] GameObject playerPrefab;
     FireHealthScript fireHealth;
     Vector2 randomPos, firePos;
@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
     float maxSpawnDistance = 10f;
     float minSpawnDistance = 5f;
 
-    private List<GameObject> logs = new List<GameObject>();
+    private List<GameObject> trees = new List<GameObject>();
 
     float screenMinY, screenMaxY;
 
@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour
 
         fireHealth = fire.GetComponent<FireHealthScript>();
 
-        SpawnLog();
+        SpawnTree();
         StartCoroutine(SpawnObjects());
     }
 
@@ -35,8 +35,8 @@ public class Spawner : MonoBehaviour
         {
             yield return new WaitForSeconds(timeInterval);
 
-            if(logs.Count < 5)
-                SpawnLog();
+            if(trees.Count < 5)
+                SpawnTree();
                 
             StartCoroutine(SpawnEnemy());
 
@@ -68,12 +68,12 @@ public class Spawner : MonoBehaviour
         return vector;
     }
 
-    void SpawnLog()
+    void SpawnTree()
     {
         randomPos = RandomPos(randomPos);
 
-        var logHolder = Instantiate(logPrefab, randomPos, Quaternion.identity);
-        logs.Add(logHolder);
+        var treeHolder = Instantiate(treePrefab, randomPos, Quaternion.identity);
+        trees.Add(treeHolder);
     }
 
     public void CallSpawnPlayer()

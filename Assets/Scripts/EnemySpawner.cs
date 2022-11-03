@@ -12,14 +12,12 @@ public class EnemySpawner : MonoBehaviour
     float timeInterval = 5f;
     float spawnDistance = 5f;
 
-    float screenMinY, screenMaxY, screenMinX, screenMaxX;
+    float screenMinY, screenMaxY;
 
     void Start()
     {
         screenMinY = Camera.main.ScreenToWorldPoint(Vector3.zero).y;
-        screenMinX = Camera.main.ScreenToWorldPoint(Vector3.zero).x;
         screenMaxY = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width,Screen.height)).y;
-        screenMaxX = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width,Screen.height)).x;
         
         firePos = fire.transform.position;
 
@@ -37,9 +35,9 @@ public class EnemySpawner : MonoBehaviour
             randomPos.y = Random.Range(screenMinY, screenMaxY);
             
             if(Random.Range(0,2) == 0)
-                randomPos.x = Random.Range(screenMinX, firePos.x - spawnDistance);
+                randomPos.x = Random.Range(firePos.x - spawnDistance*2, firePos.x - spawnDistance);
             else
-                randomPos.x = Random.Range(firePos.x + spawnDistance, screenMaxX);
+                randomPos.x = Random.Range(firePos.x + spawnDistance, firePos.x + spawnDistance*2);
 
             var enemyHolder = Instantiate(enemyPrefab, randomPos, Quaternion.identity);
             enemyHolder.GetComponent<EnemyController>().fire = fire;

@@ -36,7 +36,7 @@ public class Spawner : MonoBehaviour
 
             StartCoroutine(SpawnEnemy());
 
-            if(logs.Count !> 5)
+            if(logs.Count < 5)
                 SpawnLog();
 
             timeInterval *= .95f;

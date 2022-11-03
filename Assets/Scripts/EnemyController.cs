@@ -6,11 +6,32 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] GameObject snowballPrefab;
     public GameObject fire;
+    private Animator anim;
+    private SpriteRenderer spriRend;
+    Rigidbody rigBody;
     float fireDistance;
     float fireWidth;
     float shootDelay = 2f;
     bool atFire = false;
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+        spriRend = GetComponent<SpriteRenderer>();
+
+
+        Vector2 diff = fire.transform.position - transform.position;
+        diff = diff.normalized;
+
+        anim.SetFloat("Horizontal", diff.x);
+        anim.SetFloat("Vertical", diff.y);
+
+        if (diff.x > 0)
+            spriRend.flipX = true;
+        else
+            spriRend.flipX = false;
+
+    }
     void Update()
     {
         if (fire != null)
@@ -34,8 +55,8 @@ public class EnemyController : MonoBehaviour
     {
         while (true)
         {
+            anim.SetTrigger("Shoot");
             yield return new WaitForSeconds(shootDelay);
-            //TODO; shoot animation here
             var snowball = Instantiate(snowballPrefab, transform.position, Quaternion.identity);
             snowball.GetComponent<Rigidbody2D>().velocity = fire.transform.position - snowball.transform.position;
         }

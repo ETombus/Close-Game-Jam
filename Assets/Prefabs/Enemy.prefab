@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6326971552728890118}
   - component: {fileID: 4460951874063256362}
   - component: {fileID: 6092334247640947047}
+  - component: {fileID: 1834186728}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -34,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6842499399141068437
 SpriteRenderer:
@@ -76,9 +77,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6320754, g: 0.19306546, b: 0.19306546, a: 1}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 47371883, guid: 99762ba19e328094ab59454fd18f053a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -149,5 +150,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 122968c6bdf0cf645896363e8b776d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire: {fileID: 0}
   snowballPrefab: {fileID: 6055572976335617284, guid: c0ee04c6be2759a4494b6902dd360160, type: 3}
+  fire: {fileID: 0}
+--- !u!95 &1834186728
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7185919441851312907}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dac9774628a1fb3478e4211d240711af, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -88,8 +88,11 @@ public class PlayerMovement : MonoBehaviour
                 Time.fixedDeltaTime = slomotionSpeed * 0.02f;
                 pointer.SetActive(true);
 
-                pointer.transform.rotation = Quaternion.LookRotation(Vector3.forward, lastMovedDir);
+                Vector3 newRotation;
+                newRotation = Quaternion.LookRotation(Vector3.forward, lastMovedDir).eulerAngles;
 
+
+                pointer.transform.eulerAngles = new Vector3(pointer.transform.eulerAngles.x, pointer.transform.eulerAngles.y, newRotation.z);
             }
         }
         else

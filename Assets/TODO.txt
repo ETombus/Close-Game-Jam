@@ -1,6 +1,5 @@
 TODO
 
-Log pickup system
 Gameover screen (death of player/death of fire)
 Add art & sounds
 Tweaking and quality of life

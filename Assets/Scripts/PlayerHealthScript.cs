@@ -33,7 +33,7 @@ public class PlayerHealthScript : MonoBehaviour
         {
             try{ StopCoroutine(instance); } catch{ /**/ }
 
-            instance = ChangeHealthOverTime(coldDamage);
+            instance = ChangeHealthOverTime(coldDamage*-1);
             StartCoroutine(instance);
         }
         else if(fireDistance < fireWidth && fireDistance > fireWidth/2)

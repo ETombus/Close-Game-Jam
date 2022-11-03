@@ -1,5 +1,6 @@
 TODO;
 
-respawn player
-sounds & art
+score 
+camera movement
+sounds
 Tweaking and quality of life

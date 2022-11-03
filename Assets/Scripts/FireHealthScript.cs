@@ -6,15 +6,21 @@ using UnityEngine;
 public class FireHealthScript : MonoBehaviour
 {
     [SerializeField] Light2D innerLight, outerLight;
-    public float fireHealth = 3; 
+    public float fireHealth = 0f; 
+    float maxHealth = 3f;
     float lightRadiusDifference = 1.65f;
     void Start()
     {
-        SetHealth();
+        SetHealth(maxHealth);
     }
 
-    void SetHealth()
+    public void SetHealth(float change)
     {
+        fireHealth+=change;
+
+        if(fireHealth>maxHealth)
+            fireHealth=maxHealth;
+
         outerLight.pointLightInnerRadius = fireHealth;
         outerLight.pointLightOuterRadius = fireHealth;
 
@@ -27,8 +33,7 @@ public class FireHealthScript : MonoBehaviour
         if(hit.CompareTag("Projectile"))
         {
             Destroy(hit.gameObject);
-            fireHealth -= .5f;
-            SetHealth();
+            SetHealth(-.5f);
 
             if (fireHealth <= 0)
                 GameOver();

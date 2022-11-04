@@ -5212,7 +5212,7 @@ MonoBehaviour:
   coldDamage: 0.3
   snowmanDamage: 25
   snowballDamage: 10
-  warmthHeal: 0.85
+  warmthHeal: 2.5
   deathSound: {fileID: 8300000, guid: 133f607bbc530f445aa1dc30ee3404a7, type: 3}
 --- !u!95 &3041343319593633715
 Animator:

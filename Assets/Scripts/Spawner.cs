@@ -41,9 +41,9 @@ public class Spawner : MonoBehaviour
                 
             StartCoroutine(SpawnEnemy());
 
-            timeInterval *= .95f;
-            if (timeInterval < 1.25f)
-                timeInterval = 1.25f;
+            timeInterval *= .975f;
+            if (timeInterval < .5f)
+                timeInterval = .5f;
         }
     }
 

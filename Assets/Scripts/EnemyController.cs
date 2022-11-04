@@ -42,6 +42,7 @@ public class EnemyController : MonoBehaviour
             {
                 fireDistance = Vector2.Distance(transform.position, fire.transform.position);
                 fireWidth = fire.GetComponent<FireHealthScript>().fireHealth;
+                Mathf.Clamp(fireWidth, 2f, fire.GetComponent<FireHealthScript>().maxHealth);
 
                 if (fireDistance <= fireWidth)
                 {

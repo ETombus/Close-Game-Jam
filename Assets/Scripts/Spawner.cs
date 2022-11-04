@@ -31,19 +31,19 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpawnObjects()
     {
-        while(fireHealth.fireHealth >=1)
+        while(fireHealth.fireHealth >= 0)
         {
             
             yield return new WaitForSeconds(timeInterval);
 
-            if(trees.Count < 7)
+            if(trees.Count <= 10)
                 SpawnTree();
                 
             StartCoroutine(SpawnEnemy());
 
             timeInterval *= .95f;
-            if (timeInterval < 0)
-                timeInterval = 0;
+            if (timeInterval < 1.25f)
+                timeInterval = 1.25f;
         }
     }
 
